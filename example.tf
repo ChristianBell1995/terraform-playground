@@ -1,3 +1,14 @@
+terraform {
+  backend "remote" {
+    hostname = "app.terraform.io"
+    organization = "ChristianCorp"
+
+    workspaces {
+      name = "terraform-playground"
+    }
+  }
+}
+
 provider "aws" {
   profile    = "default"
   region     = var.region
